@@ -3,12 +3,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
-import { Button } from "@/app/components/ui/button";
 import AddToBasketButton from "@/app/components/AddToBasketButton"
 import ColorSelector from "@/app/components/ColorSelector";
 import SizeSelector from "@/app/components/SizeSelector";
-import Reviews from "@/app/components/Reviews";
-import { Divide } from "lucide-react";
 
 
 export default async function ProductPage({ 
