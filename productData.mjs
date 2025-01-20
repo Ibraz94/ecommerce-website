@@ -4,7 +4,7 @@ const client = createClient({
   projectId: 'i7r8upi1',
   dataset: 'production',
   useCdn: true,
-  apiVersion: '2025-01-13',
+  apiVersion: '2025-01-20',
   token: 'skIbGiyjRbSsoQGUSQi9NerL62sjtENGjmaqua2OAVuPiuJICN0eUvcrA5MeorntEyEeO26yveG9bZ8yfFTGRD0kf82bfEHbYm51dLp7UE062E6gGmURTEghJ9X5qOflQfaGVOSsd2JLokUgpI0WfFFC2QOZD5Ugtjgfhy1KtASd4ia2ZOWw',
 });
 
