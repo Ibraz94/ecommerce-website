@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
           hostname: "cdn.sanity.io",  
         }
     ]
-}
+},
+
+env: {
+  SANITY_API_READ_TOKEN: process.env.SANITY_API_READ_TOKEN,
+},
 
 };
 
