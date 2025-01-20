@@ -5,11 +5,27 @@ import { getProductByCategory } from "@/sanity/lib/products/getProductByCategory
 async function CategoryPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  // Fetch data
-  const products = await getProductByCategory(slug);
-  const categories = await getAllCategories();
+  // Validate slug
+  if (!slug) {
+    return (
+      <div className="w-full flex items-center justify-center min-h-screen">
+        <p>Invalid category slug.</p>
+      </div>
+    );
+  }
 
-  // Handle invalid data
+  // Fetch data with error handling
+  const products = await getProductByCategory(slug).catch((err) => {
+    console.error("Error fetching products:", err);
+    return [];
+  });
+
+  const categories = await getAllCategories().catch((err) => {
+    console.error("Error fetching categories:", err);
+    return [];
+  });
+
+  // Handle empty products
   if (!products || products.length === 0) {
     return (
       <div className="w-full flex items-center justify-center min-h-screen">
