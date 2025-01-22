@@ -17,6 +17,6 @@ export const getProductBySlug = async (slug: string) => {
     return product.data || null;
  }  catch (error) {
     console.error("Error fetching product by ID:", error);
-    return null;
+    return;
  }
-}; 
+};
