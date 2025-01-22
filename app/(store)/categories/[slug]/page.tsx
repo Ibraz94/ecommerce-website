@@ -1,6 +1,8 @@
 import ProductsView from "@/app/components/ProductsView";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getProductByCategory } from "@/sanity/lib/products/getProductByCategory";
+import { notFound } from "next/navigation";
+
 
 async function CategoryPage({
    params 
@@ -12,6 +14,10 @@ async function CategoryPage({
     const { slug } = await params;
     const products = await getProductByCategory(slug);
     const categories = await getAllCategories();
+
+     if (!products) {
+           return notFound()
+         }
 
   return (
     <div className="w-screen flex flex-col items-center justify-top min-h-screen p-4">
